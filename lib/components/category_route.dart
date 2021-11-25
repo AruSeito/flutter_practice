@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "./List/list_item.dart";
+import './unit.dart';
 
 class CategoryRoute extends StatelessWidget {
   const CategoryRoute({Key? key}) : super(key: key);
@@ -34,15 +35,27 @@ class CategoryRoute extends StatelessWidget {
         });
   }
 
+  List<Unit> _retrieveUnitList(String categoryName) {
+    return List.generate(10, (int i) {
+      i += 1;
+      return Unit(
+        name: '$categoryName Unit $i',
+        conversion: i.toDouble(),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final categories = <ListItem>[];
 
     for (int i = 0; i < _categoryNames.length; i++) {
       categories.add(ListItem(
-          name: _categoryNames[i],
-          iconName: Icons.cake,
-          color: _baseColors[i]));
+        name: _categoryNames[i],
+        iconName: Icons.cake,
+        color: _baseColors[i],
+        units: _retrieveUnitList(_categoryNames[i]),
+      ));
     }
 
     final listView = Container(child: getList(categories));

@@ -11,12 +11,9 @@ class Hello extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text("hhhhhh"),
-        ),
-        body: const Hello(),
+        body: Hello(),
       )));
 }
