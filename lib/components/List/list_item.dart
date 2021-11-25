@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class ListItem extends StatelessWidget {
   final String name;
   final IconData iconName;
+  final MaterialColor color;
 
-  const ListItem({Key? key, required this.name, required this.iconName})
+  const ListItem(
+      {Key? key,
+      required this.name,
+      required this.iconName,
+      required this.color})
       : super(key: key);
 
   @override
@@ -15,8 +20,8 @@ class ListItem extends StatelessWidget {
         height: 100.0,
         child: InkWell(
           borderRadius: BorderRadius.circular(50),
-          highlightColor: Colors.green[50],
-          splashColor: Colors.green[100],
+          highlightColor: color[50],
+          splashColor: color[100],
           onTap: () {
             print("点击了");
           },

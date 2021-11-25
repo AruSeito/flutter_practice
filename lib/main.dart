@@ -10,6 +10,7 @@ class Hello extends StatelessWidget {
       child: ListItem(
         iconName: Icons.cake,
         name: "cake",
+        color: Colors.blue,
       ),
     );
   }
