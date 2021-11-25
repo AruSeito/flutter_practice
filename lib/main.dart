@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import "./components/List/list_item.dart";
+import "./components/category_route.dart";
 
 class Hello extends StatelessWidget {
   const Hello({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: ListItem(
-        iconName: Icons.cake,
-        name: "cake",
-        color: Colors.blue,
-      ),
-    );
+    return const CategoryRoute();
   }
 }
 
